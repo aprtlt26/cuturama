@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página en Construcción</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block; /* Removes margin in the bottom */
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+</head>
+<body>
+
+<div id="message">Página en Construcción...</div>
+
+<script>
+    let brownNoise;
+    let time = 0;
+    let started = false;
+
+    function setup() {
+        createCanvas(windowWidth, windowHeight);
+        brownNoise = new p5.Noise('brown');
+        brownNoise.start();
+        brownNoise.amp(0);
+        frameRate(30);
+        noLoop(); // Inicialmente detiene el bucle de dibujo
+    }
+
+    function draw() {
+        background(255);
+        loadPixels();
+        for (let x = 0; x < width; x++) {
+            for (let y = 0; y < height; y++) {
+                const index = (x + y * width) * 4;
+                const bright = random(255);
+                pixels[index] = bright;
+                pixels[index + 1] = bright;
+                pixels[index + 2] = bright;
+                pixels[index + 3] = 255;
+            }
+        }
+        updatePixels();
+
+        let volume = (sin(time) + 1) / 2 * 0.3;
+        brownNoise.amp(volume, 0.1);
+
+        time += 0.2;
+    }
+
+    function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+    }
+
+    function startAudio() {
+        if (!started) {
+            started = true;
+            loop(); // Comienza el bucle de dibujo y sonido
+            brownNoise.amp(0.3, 0.5); // Aumenta el volumen suavemente
+        }
+    }
+
+    // Eventos para iniciar el audio y la animación visual al interactuar con la página
+    document.addEventListener('click', startAudio);
+    document.addEventListener('touchstart', startAudio, {passive: true}); // Agrega passive para mejorar el rendimiento en móviles
+</script>
+
+</body>
+</html>
