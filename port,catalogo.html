@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Artistas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #333;
+            padding: 1rem;
+            justify-content: center;
+        }
+        .navbar a {
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 1rem;
+        }
+        .category, .artist-section {
+            display: none;
+            margin: 2rem 0;
+        }
+        .category.active, .artist-section.active {
+            display: block;
+        }
+        .category img {
+            width: 100%;
+            max-width: 300px;
+            cursor: pointer;
+        }
+        .artist-profile {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .artist-profile img {
+            max-width: 150px;
+            margin-right: 1rem;
+        }
+        .artist-details {
+            flex: 1;
+            min-width: 250px;
+        }
+        .artist-details h3 {
+            margin-top: 0;
+        }
+        .artist-media {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .artist-media img,
+        .artist-media audio {
+            flex: 1 1 45%;
+            margin: 0.5rem;
+            max-width: 100%;
+        }
+        .artist-contact {
+            margin-top: 1rem;
+        }
+        .artist-contact a {
+            margin-right: 0.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+        @media (max-width: 600px) {
+            .artist-profile {
+                flex-direction: column;
+            }
+            .artist-profile img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                max-width: 100%;
+            }
+            .artist-media img,
+            .artist-media audio {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#" class="nav-category" data-category="categoria1">Categoría 1</a>
+        <a href="#" class="nav-category" data-category="categoria2">Categoría 2</a>
+        <a href="#" class="nav-category" data-category="categoria3">Categoría 3</a>
+        <!-- Agrega más enlaces de categorías según sea necesario -->
+    </div>
+
+    <div class="container">
+
+        <div id="categorias" class="category active">
+            <h2>Categorías</h2>
+            <div>
+                <img src="portada1.jpg" alt="Categoría 1" class="category-img" data-category="categoria1">
+                <img src="portada2.jpg" alt="Categoría 2" class="category-img" data-category="categoria2">
+                <img src="portada3.jpg" alt="Categoría 3" class="category-img" data-category="categoria3">
+                <!-- Agrega más imágenes de portada según sea necesario -->
+            </div>
+        </div>
+
+        <div id="categoria1" class="artist-section">
+            <h2>Categoría 1</h2>
+            <button onclick="goBack()">Volver</button>
+            <div class="artist-profile">
+                <img src="ruta_de_imagen.jpg" alt="Nombre del Artista">
+                <div class="artist-details">
+                    <h3>Nombre del Artista</h3>
+                    <p>Categoría: Categoría 1</p>
+                    <div class="artist-contact">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <!-- Añadir más redes sociales si es necesario -->
+                    </div>
+                    <p>Reseña biográfica del artista.</p>
+                </div>
+                <div class="artist-media">
+                    <img src="foto1.jpg" alt="Foto 1">
+                    <img src="foto2.jpg" alt="Foto 2">
+                    <img src="foto3.jpg" alt="Foto 3">
+                    <img src="foto4.jpg" alt="Foto 4">
+                    <img src="foto5.jpg" alt="Foto 5">
+                    <audio controls>
+                        <source src="audio1.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                    <audio controls>
+                        <source src="audio2.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                </div>
+            </div>
+            <!-- Repite .artist-profile para más artistas en esta categoría -->
+        </div>
+
+        <div id="categoria2" class="artist-section">
+            <h2>Categoría 2</h2>
+            <button onclick="goBack()">Volver</button>
+            <div class="artist-profile">
+                <img src="ruta_de_imagen.jpg" alt="Nombre del Artista">
+                <div class="artist-details">
+                    <h3>Nombre del Artista</h3>
+                    <p>Categoría: Categoría 2</p>
+                    <div class="artist-contact">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <!-- Añadir más redes sociales si es necesario -->
+                    </div>
+                    <p>Reseña biográfica del artista.</p>
+                </div>
+                <div class="artist-media">
+                    <img src="foto1.jpg" alt="Foto 1">
+                    <img src="foto2.jpg" alt="Foto 2">
+                    <img src="foto3.jpg" alt="Foto 3">
+                    <img src="foto4.jpg" alt="Foto 4">
+                    <img src="foto5.jpg" alt="Foto 5">
+                    <audio controls>
+                        <source src="audio1.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                    <audio controls>
+                        <source src="audio2.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                </div>
+            </div>
+            <!-- Repite .artist-profile para más artistas en esta categoría -->
+        </div>
+
+        <div id="categoria3" class="artist-section">
+            <h2>Categoría 3</h2>
+            <button onclick="goBack()">Volver</button>
+            <div class="artist-profile">
+                <img src="ruta_de_imagen.jpg" alt="Nombre del Artista">
+                <div class="artist-details">
+                    <h3>Nombre del Artista</h3>
+                    <p>Categoría: Categoría 3</p>
+                    <div class="artist-contact">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <!-- Añadir más redes sociales si es necesario -->
+                    </div>
+                    <p>Reseña biográfica del artista.</p>
+                </div>
+                <div class="artist-media">
+                    <img src="foto1.jpg" alt="Foto 1">
+                    <img src="foto2.jpg" alt="Foto 2">
+                    <img src="foto3.jpg" alt="Foto 3">
+                    <img src="foto4.jpg" alt="Foto 4">
+                    <img src="foto5.jpg" alt="Foto 5">
+                    <audio controls>
+                        <source src="audio1.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                    <audio controls>
+                        <source src="audio2.mp3" type="audio/mpeg">
+                        Tu navegador no soporta la reproducción de audio.
+                    </audio>
+                </div>
+            </div>
+            <!-- Repite .artist-profile para más artistas en esta categoría -->
+        </div>
+
+        <!-- Agrega más secciones de categoría según sea necesario -->
+
+    </div>
+
+    <script>
+        document.querySelectorAll('.nav-category, .category-img').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                const category = event.target.getAttribute('data-category');
+                document.querySelectorAll('.category, .artist-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(category).classList.add('active');
+            });
+        });
+
+        function goBack() {
+            document.querySelectorAll('.artist-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById('categorias').classList.add('active');
+        }
+    </script>
+</body>
+</html>
