@@ -1,5 +1,4 @@
 
-
 <html lang="es" prefix="og: https://ogp.me/ns#" data-lt-installed="true"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -246,19 +245,19 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
         <div class="form">
             <h1>Crear perfil de Artista</h1>
             <form id="perfilArtista">
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" required><br>
+                <input type="text" placeholder="Nombre Completo" required><br>
 
                 <label for="profilePhoto">Foto de Perfil:</label>
                 <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
                 <img id="photoPreview" src="#" alt="Vista previa" style="display: none; width: 200px; height: auto;">
                 
                 <label for="Edad">Edad:</label>
-                <input type="number" id="edad" name="edad" required>
+                <input type="number" id="Edad" name="edad">
     
                 <label for="Campo de acción">Campo de acción:</label>
-                <select id="campoAccion" name="campoAccion" required>
+                <select required>
                     <option value="">Seleccione el campo de acción</option>
-                    <option value="arte">Artes plásticas o visuales</option>
+                    <option value="arte">Artes plasticas o visuales</option>
                     <option value="música">Música</option>
                     <option value="teatro">Teatro</option>
                     <option value="danza">Danza</option>
@@ -272,33 +271,30 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
                 </select>
     
                 <label for="Oficio">Oficio:</label>
-                <input type="text" id="oficio" name="oficio" required>
+                <input type="text" id="Labor" name="labor">
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Email" required><br>
+                <input type="text" placeholder="Email" required><br>
 
                 <label for="profilePhotos">Fotos de Perfil (máximo 5):</label>
                 <input type="file" id="profilePhotos" name="profilePhotos" accept="image/*" multiple onchange="previewImages();">
                 <div id="imagesPreview"></div>
 
                 <label for="declaracion">Declaración Juramentada de Vivienda en Duitama (PDF):</label>
-                <input type="file" id="declaracion" name="declaracion" accept="application/pdf" required>
+                <input type="file" id="declaracion" name="declaracion" accept="application/pdf">
 
                 <div id="redes">
                     <label for="facebook">Facebook:</label>
                     <input type="url" id="facebook" name="facebook">
                     
-                    <label for="youtube">YouTube:</label>
-                    <input type="url" id="youtube" name="youtube">
+                    <label for="twitter">Twitter:</label>
+                    <input type="url" id="twitter" name="twitter">
                     
                     <label for="instagram">Instagram:</label>
                     <input type="url" id="instagram" name="instagram">
                     
-                    <label for="paginaWeb">Página Web:</label>
-                    <input type="url" id="paginaWeb" name="paginaWeb" required><br>
-
-                    <label for="otro">Otro:</label>
-                    <input type="text" id="otro" name="otro"><br>
+                    <label for="linkedin">LinkedIn:</label>
+                    <input type="url" id="linkedin" name="linkedin">
                 </div>
 
                 <button type="submit">Crear Perfil</button>
@@ -306,28 +302,7 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
         </div>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js"></script>
     <script>
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyB80bgQ61_7pjRP_MoEO49XxRt2GnTSl3A",
-            authDomain: "cuturama-d9717.firebaseapp.com",
-            projectId: "cuturama-d9717",
-            storageBucket: "cuturama-d9717.appspot.com",
-            messagingSenderId: "973334175891",
-            appId: "1:973334175891:web:b3dd4b391916c4a762ed66",
-            measurementId: "G-DC9ZTQ6MLB"
-        };
-
-        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const analytics = firebase.getAnalytics(app);
-        const storage = firebase.storage();
-        const db = firebase.firestore();
-
         // Function to preview uploaded images
         function previewImages() {
             var preview = document.querySelector('#imagesPreview');
@@ -351,79 +326,6 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
                 reader.readAsDataURL(file);
             }
         }
-
-        document.getElementById('perfilArtista').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const nombre = document.getElementById('nombre').value;
-            const edad = document.getElementById('edad').value;
-            const campoAccion = document.getElementById('campoAccion').value;
-            const oficio = document.getElementById('oficio').value;
-            const email = document.getElementById('email').value;
-            const facebook = document.getElementById('facebook').value;
-            const youtube = document.getElementById('youtube').value;
-            const instagram = document.getElementById('instagram').value;
-            const paginaWeb = document.getElementById('paginaWeb').value;
-            const otro = document.getElementById('otro').value;
-            const profilePhoto = document.getElementById('profilePhoto').files[0];
-            const declaracion = document.getElementById('declaracion').files[0];
-            const profilePhotos = document.getElementById('profilePhotos').files;
-
-            const profilePhotoRef = storage.ref('profilePhotos/' + profilePhoto.name);
-            const declaracionRef = storage.ref('declaraciones/' + declaracion.name);
-
-            let profilePhotosRefs = [];
-            for (let i = 0; i < profilePhotos.length; i++) {
-                let ref = storage.ref('profilePhotos/' + profilePhotos[i].name);
-                profilePhotosRefs.push(ref);
-            }
-
-            profilePhotoRef.put(profilePhoto).then(() => {
-                declaracionRef.put(declaracion).then(() => {
-                    let uploadPromises = [];
-                    profilePhotosRefs.forEach((ref, index) => {
-                        uploadPromises.push(ref.put(profilePhotos[index]));
-                    });
-
-                    Promise.all(uploadPromises).then(() => {
-                        profilePhotoRef.getDownloadURL().then((photoURL) => {
-                            declaracionRef.getDownloadURL().then((declaracionURL) => {
-                                let profilePhotosURLs = [];
-                                let profilePhotosDownloadPromises = [];
-                                profilePhotosRefs.forEach(ref => {
-                                    profilePhotosDownloadPromises.push(ref.getDownloadURL());
-                                });
-
-                                Promise.all(profilePhotosDownloadPromises).then((urls) => {
-                                    profilePhotosURLs = urls;
-
-                                    db.collection('profiles').add({
-                                        nombre: nombre,
-                                        edad: edad,
-                                        campoAccion: campoAccion,
-                                        oficio: oficio,
-                                        email: email,
-                                        facebook: facebook,
-                                        youtube: youtube,
-                                        instagram: instagram,
-                                        paginaWeb: paginaWeb,
-                                        otro: otro,
-                                        profilePhoto: photoURL,
-                                        declaracion: declaracionURL,
-                                        profilePhotos: profilePhotosURLs,
-                                        visible: false // Set initial visibility to false
-                                    }).then(() => {
-                                        alert('Perfil creado con éxito');
-                                    }).catch((error) => {
-                                        console.error("Error adding document: ", error);
-                                    });
-                                });
-                            });
-                        });
-                    });
-                });
-            });
-        });
     </script>
 </section>
 
