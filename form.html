@@ -1,3 +1,4 @@
+
 <html lang="es" prefix="og: https://ogp.me/ns#" data-lt-installed="true"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -300,6 +301,7 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
         </div>
     </div>
 
+    <!-- Carga de Firebase JS SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js"></script>
@@ -370,16 +372,16 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
             const declaracion = document.getElementById('declaracion').files[0];
             const profilePhotos = document.getElementById('profilePhotos').files;
 
-            const profilePhotoRef = storage.ref('profilePhotos/' + profilePhoto.name);
-            const declaracionRef = storage.ref('declaraciones/' + declaracion.name);
-
-            let profilePhotosRefs = [];
-            for (let i = 0; i < profilePhotos.length; i++) {
-                let ref = storage.ref('profilePhotos/' + profilePhotos[i].name);
-                profilePhotosRefs.push(ref);
-            }
-
             try {
+                const profilePhotoRef = storage.ref('profilePhotos/' + profilePhoto.name);
+                const declaracionRef = storage.ref('declaraciones/' + declaracion.name);
+
+                let profilePhotosRefs = [];
+                for (let i = 0; i < profilePhotos.length; i++) {
+                    let ref = storage.ref('profilePhotos/' + profilePhotos[i].name);
+                    profilePhotosRefs.push(ref);
+                }
+
                 await profilePhotoRef.put(profilePhoto);
                 await declaracionRef.put(declaracion);
 
@@ -421,6 +423,8 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
                 });
 
                 alert('Perfil creado con éxito. Su perfil será activado después de la revisión de documentos.');
+                document.getElementById('perfilArtista').reset();
+                document.getElementById('perfilArtista').style.display = 'none';
             } catch (error) {
                 console.error("Error al crear el perfil: ", error);
                 alert("Error al crear el perfil. Intente de nuevo.");
