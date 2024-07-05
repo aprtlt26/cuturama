@@ -1,4 +1,5 @@
 
+
 <html lang="es" prefix="og: https://ogp.me/ns#" data-lt-installed="true"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -153,180 +154,224 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
     <div class="cursor hidden w-6 h-6 rounded-full bg-secondary bg-opacity-90 fixed top-0 left-0 lg:flex items-center justify-center" style="translate: none; rotate: none; scale: none; transform: translate(-50%, -50%) translate(483px, 350px); opacity: 0.9; background: rgba(132, 132, 132, 0.514);"></div>
     <div class="fixed top-0 left-0 opacity-0 w-2 h-2"></div>
 
+
     <style>
-        /* Estilos generales */
-        .container {
-            display: flex;
-            flex-wrap: wrap; /* Permite que los elementos se ajusten según el espacio disponible */
-            justify-content: space-around; /* Distribuye el espacio alrededor de los elementos */
+        body {
+            margin: 0;
+            font-family: "Anta", sans-serif;
+            background-color: #ffffff;
+            height: 100vh;
+            background-image: url(p5);
+        }
+
+        .anta-regular {
+            font-family: "Anta", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .section {
+            padding: 100px;
+            text-align: center;
+        }
+
+        /* Estilos para el formulario */
+        #login-form, #register-form {
+            max-width: 400px;
+            margin: 0 auto;
             padding: 20px;
+            border-radius: 5px;
+            background-color: transparent;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1.5); /* Sombra suave */
             padding-top: 150px;
         }
-        
-        .form {
-            flex: 1 1 45%; /* Ocupa aproximadamente el 45% del espacio disponible */
-            margin: 5px;
-            box-shadow: 0 0 10px #717171;
-            background-color: #b3e8d5;
-            padding: 40px;
-            border-radius: 8px;
-            font-size: 12px;
-        }
-        
-        input[type="text"], input[type="number"], select {
+
+        #login-form input[type="email"],
+        #login-form input[type="password"],
+        #register-form input[type="text"],
+        #register-form input[type="email"],
+        #register-form input[type="password"] {
             width: 100%;
-            padding: 5px;
-            margin-top: 5px;
-            border: 1px solid #d4d4d4;
-            border-radius: 5px;
-            background-color: #f8f8ed;
-            color:#adadad;
-        }
-        
-        button {
-            width: 100%;
-            padding: 8px 0;
-            margin-top: 10px;
-            background-color: #5b579f;
-            color: rgb(49, 49, 49);
-            border:#171717;
+            padding: 10px;
+            margin: 8px 0;
+            display: flex;
             border-radius: 4px;
+            box-sizing: border-box;
+            border: 2px dashed #dedede;
+            background-color: #e7e7e7;
+            color: #dedede;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #login-form input[type="submit"],
+        #register-form input[type="submit"] {
+            display: flex;
+            width: 100%;
+            background-color: #000000;
+            color: rgb(221, 221, 221);
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            border: 2px dashed #595858;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
         }
-        
-        button:hover {
-            background-color: #a382d7;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            color: #cfcfcf;
         }
-        
-        #profilePhotos, #profileVideo, #redes {
-            width: 100%;
-            padding: 8px 0;
-            margin-top: 10px;
-            color: rgb(49, 49, 49);
-            border:#171717;
-            border-radius: 4px;
-            cursor: pointer;
+
+        #login-form input[type="submit"]:hover,
+        #register-form input[type="submit"]:hover {
+            background-color: #f7f7f7;
+            border: 2px dashed #cfcfcf;
         }
-        
-        /* Media Query para dispositivos pequeños */
+
+        h2 {
+            color: rgb(230, 226, 189);
+        }
+
+        h3 {
+            color: rgb(230, 226, 189);
+        }
+
+        footer {
+            top: 150px;
+        }
+
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
+            .section {
+                padding: 50px 20px;
             }
-        
-            .form {
-                flex: 1 1 100%; /* Cada formulario toma el ancho completo en dispositivos pequeños */
+
+            #login-form, #register-form {
+                max-width: 90%;
+                padding: 20px;
             }
-        }
-        
-        /* Mejorando la visibilidad en pantallas muy pequeñas */
-        @media (max-width: 480px) {
-            .container {
-                padding: 10px;
+
+            #login-form input[type="email"],
+            #login-form input[type="password"],
+            #register-form input[type="text"],
+            #register-form input[type="email"],
+            #register-form input[type="password"] {
+                padding: 8px;
             }
-        
-            .form {
-                padding: 15px;
-            }
-        
-            input[type="text"], input[type="number"], select {
-                padding: 10px;
-            }
-        
-            button {
-                padding: 12px 0;
+
+            #login-form input[type="submit"],
+            #register-form input[type="submit"] {
+                padding: 12px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Formulario de Perfil de Artista -->
-        <div class="form">
-            <h1>Crear perfil de Artista</h1>
-            <form id="perfilArtista">
-                <input type="text" placeholder="Nombre Completo" required><br>
-
-                <label for="profilePhoto">Foto de Perfil:</label>
-                <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
-                <img id="photoPreview" src="#" alt="Vista previa" style="display: none; width: 200px; height: auto;">
-                
-                <label for="Edad">Edad:</label>
-                <input type="number" id="Edad" name="edad">
-    
-                <label for="Campo de acción">Campo de acción:</label>
-                <select required>
-                    <option value="">Seleccione el campo de acción</option>
-                    <option value="arte">Artes plasticas o visuales</option>
-                    <option value="música">Música</option>
-                    <option value="teatro">Teatro</option>
-                    <option value="danza">Danza</option>
-                    <option value="literatura">Literatura</option>
-                    <option value="cine">Cine</option>
-                    <option value="fotografía">Fotografía</option>
-                    <option value="arte_callejero">Arte Urbano</option>
-                    <option value="arte_web_media">Artes Web Media</option>
-                    <option value="otro">Comunidades</option>
-                    <option value="otro">Otro</option>
-                </select>
-    
-                <label for="Oficio">Oficio:</label>
-                <input type="text" id="Labor" name="labor">
-
-                <label for="email">Email:</label>
-                <input type="text" placeholder="Email" required><br>
-
-                <label for="profilePhotos">Fotos de Perfil (máximo 5):</label>
-                <input type="file" id="profilePhotos" name="profilePhotos" accept="image/*" multiple onchange="previewImages();">
-                <div id="imagesPreview"></div>
-
-                <label for="declaracion">Declaración Juramentada de Vivienda en Duitama (PDF):</label>
-                <input type="file" id="declaracion" name="declaracion" accept="application/pdf">
-
-                <div id="redes">
-                    <label for="facebook">Facebook:</label>
-                    <input type="url" id="facebook" name="facebook">
-                    
-                    <label for="twitter">Twitter:</label>
-                    <input type="url" id="twitter" name="twitter">
-                    
-                    <label for="instagram">Instagram:</label>
-                    <input type="url" id="instagram" name="instagram">
-                    
-                    <label for="linkedin">LinkedIn:</label>
-                    <input type="url" id="linkedin" name="linkedin">
-                </div>
-
-                <button type="submit">Crear Perfil</button>
+    <div id="myCanvas"></div>
+    <div id="tree-sketch-container"></div>
+    <section class="section">
+        <div id="login-section" style="display: none;">
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Your Email" required><br>
+                <input type="password" id="login-password" placeholder="Your Password" required><br>
+                <button type="button" id="login-btn">Entrar</button>
             </form>
         </div>
-    </div>
-
+        <div id="register-section" style="display: block;">
+            <form id="register-form">
+                <input type="text" id="nombre" placeholder="Your Name" required><br>
+                <input type="email" id="correo" placeholder="Your Email" required><br>
+                <input type="password" id="clave" placeholder="Your Password" required><br>
+                <button type="button" id="register-btn">Registrar</button>
+            </form>
+        </div>
+        <button onclick="toggleForm()" style="background-color: #ffffff;"><img src="box-arrow-right.svg"></button>
+    </section>
+    
     <script>
-        // Function to preview uploaded images
-        function previewImages() {
-            var preview = document.querySelector('#imagesPreview');
-            var files = document.querySelector('#profilePhotos').files;
-            preview.innerHTML = '';
-            if (files) {
-                [].forEach.call(files, readAndPreview);
-            }
-            function readAndPreview(file) {
-                if (!/\.(jpe?g|png|gif)$/i.test(file.name)) {
-                    return alert(file.name + " no es una imagen válida");
-                }
-                var reader = new FileReader();
-                reader.addEventListener("load", function() {
-                    var image = new Image();
-                    image.height = 100;
-                    image.title = file.name;
-                    image.src = this.result;
-                    preview.appendChild(image);
-                });
-                reader.readAsDataURL(file);
+        function toggleForm() {
+            var loginSection = document.getElementById("login-section");
+            var registerSection = document.getElementById("register-section");
+            var button = document.querySelector("button");
+
+            if (loginSection.style.display === "none") {
+                loginSection.style.display = "block";
+                registerSection.style.display = "none";
+                button.textContent = "Switch to Register";
+            } else {
+                loginSection.style.display = "none";
+                registerSection.style.display = "block";
+                button.textContent = "To Login";
             }
         }
     </script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBPTxSNtORJdZU40efCQvNv2wKKyrYY6EI",
+  authDomain: "catalogo-64838.firebaseapp.com",
+  projectId: "catalogo-64838",
+  storageBucket: "catalogo-64838.appspot.com",
+  messagingSenderId: "1032209654548",
+  appId: "1:1032209654548:web:2068ddc97a7ce322aed801",
+  measurementId: "G-QLDGV67XS3"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        document.getElementById('register-btn').addEventListener('click', async () => {
+            const nombre = document.getElementById('nombre').value;
+            const correo = document.getElementById('correo').value;
+            const clave = document.getElementById('clave').value;
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, correo, clave);
+                console.log("Usuario registrado:", userCredential.user);
+                await setDoc(doc(db, "usuarios", userCredential.user.uid), { nombre, correo });
+                alert("Usuario registrado exitosamente.");
+                window.location.href = 'form.html'; // Ajusta esta URL si es necesario
+            } catch (error) {
+                console.error("Error al registrar el usuario:", error);
+                alert(error.message);
+            }
+        });
+
+        document.getElementById('login-btn').addEventListener('click', async () => {
+            const correo = document.getElementById('login-email').value;
+            const clave = document.getElementById('login-password').value;
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, correo, clave);
+                console.log("Usuario logueado:", userCredential.user);
+                alert("Inicio de sesión exitoso.");
+                window.location.href = 'form.html'; // Ajusta esta URL si es necesario
+            } catch (error) {
+                console.error("Error al iniciar sesión:", error);
+                alert(error.message);
+            }
+        });
+    </script>
+
+
+</script>
+
+
+
+</div>
+
+
 </section>
 
 
@@ -344,8 +389,6 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
             
 </div>
 </div>
-
-
 
 <footer class="hidden md:block py-10 sm:py-10 w-full bg-color_text relative" style="background-color: rgba(0, 0, 0, 0)">
     <div class="w-[158%] mx-auto">
