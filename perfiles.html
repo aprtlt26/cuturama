@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Artistas</title>
+    <style>
+        .container {
+            padding: 20px;
+            padding-top: 50px;
+        }
+        .filter {
+            margin-bottom: 20px;
+        }
+        .profile {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+        .profile-details {
+            flex: 1;
+            text-align: left;
+            width: 100%;
+        }
+        .profile-photos img {
+            max-width: 50px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="filter">
+            <label for="campoAccion">Filtrar por Campo de Acción:</label>
+            <select id="campoAccion">
+                <option value="all">Todos</option>
+                <option value="arte">Artes plásticas o visuales</option>
+                <option value="música">Música</option>
+                <option value="teatro">Teatro</option>
+                <option value="danza">Danza</option>
+                <option value="literatura">Literatura</option>
+                <option value="cine">Cine</option>
+                <option value="fotografía">Fotografía</option>
+                <option value="arte_callejero">Arte Urbano</option>
+                <option value="arte_web_media">Artes Web Media</option>
+                <option value="comunidades">Comunidades</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+        <div id="profiles" class="profiles"></div>
+    </div>
+
+    <!-- Carga de Firebase JS SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore-compat.js"></script>
+    <script>
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBPTxSNtORJdZU40efCQvNv2wKKyrYY6EI",
+            authDomain: "catalogo-64838.firebaseapp.com",
+            projectId: "catalogo-64838",
+            storageBucket: "catalogo-64838.appspot.com",
+            messagingSenderId: "1032209654548",
+            appId: "1:1032209654548:web:2068ddc97a7ce322aed801",
+            measurementId: "G-QLDGV67XS3"
+        };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        function fetchProfiles(campoAccion = 'all') {
+            let query = db.collection('profiles').where('visible', '==', true);
+
+            if (campoAccion !== 'all') {
+                query = query.where('campoAccion', '==', campoAccion);
+            }
+
+            query.get().then((querySnapshot) => {
+                const profilesContainer = document.getElementById('profiles');
+                profilesContainer.innerHTML = '';
+
+                querySnapshot.forEach((doc) => {
+                    const profile = doc.data();
+                    const profileElement = document.createElement('div');
+                    profileElement.className = 'profile';
+                    profileElement.innerHTML = `
+                        <img src="${profile.profilePhoto}" alt="Foto de perfil">
+                        <div class="profile-details">
+                            <h3>${profile.nombreArtista}</h3>
+                            <p><strong>Nombre:</strong> ${profile.nombre}</p>
+                            <p><strong>Edad:</strong> ${profile.edad}</p>
+                            <p><strong>Campo de Acción:</strong> ${profile.campoAccion}</p>
+                            <p><strong>Oficio:</strong> ${profile.oficio}</p>
+                            <p><strong>Email:</strong> ${profile.email}</p>
+                            <p><strong>Facebook:</strong> ${profile.facebook}</p>
+                            <p><strong>YouTube:</strong> ${profile.youtube}</p>
+                            <p><strong>Instagram:</strong> ${profile.instagram}</p>
+                            <p><strong>Página Web:</strong> ${profile.paginaWeb}</p>
+                            <p><strong>Otro:</strong> ${profile.otro}</p>
+                            <p><strong>Declaración:</strong> <a href="${profile.declaracion}" target="_blank">Ver documento</a></p>
+                            <div class="profile-photos">
+                                <strong>Fotos del Perfil:</strong>
+                                ${profile.profilePhotos.map(photoUrl => `<img src="${photoUrl}" alt="Foto adicional">`).join('')}
+                            </div>
+                        </div>
+                    `;
+                    profilesContainer.appendChild(profileElement);
+                });
+            }).catch((error) => {
+                console.error("Error obteniendo los perfiles: ", error);
+            });
+        }
+
+        document.getElementById('campoAccion').addEventListener('change', (event) => {
+            fetchProfiles(event.target.value);
+        });
+
+        fetchProfiles();
+    </script>
+</body>
+</html>
