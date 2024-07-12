@@ -95,7 +95,7 @@
                     const profileElement = document.createElement('div');
                     profileElement.className = 'profile';
                     profileElement.innerHTML = `
-                        <img src="${profile.profilePhoto}" alt="Foto de perfil">
+                        <img src="${profile.profilePhoto}" alt="Foto de perfil" onerror="this.onerror=null; this.src='default-profile.png'">
                         <div class="profile-details">
                             <h3>${profile.nombreArtista}</h3>
                             <p><strong>Nombre:</strong> ${profile.nombre}</p>
@@ -111,7 +111,7 @@
                             <p><strong>Declaración:</strong> <a href="${profile.declaracion}" target="_blank">Ver documento</a></p>
                             <div class="profile-photos">
                                 <strong>Fotos del Perfil:</strong>
-                                ${profile.profilePhotos.map(photoUrl => `<img src="${photoUrl}" alt="Foto adicional">`).join('')}
+                                ${profile.profilePhotos.map(photoUrl => `<img src="${photoUrl}" alt="Foto adicional" onerror="this.onerror=null; this.src='default-photo.png'">`).join('')}
                             </div>
                         </div>
                     `;
@@ -130,3 +130,4 @@
     </script>
 </body>
 </html>
+
