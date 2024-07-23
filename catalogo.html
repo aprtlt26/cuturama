@@ -1,4 +1,3 @@
-
 <html lang="es" prefix="og: https://ogp.me/ns#" data-lt-installed="true"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -151,376 +150,331 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
     <div class="cursor hidden w-6 h-6 rounded-full bg-secondary bg-opacity-90 fixed top-0 left-0 lg:flex items-center justify-center" style="translate: none; rotate: none; scale: none; transform: translate(-50%, -50%) translate(483px, 350px); opacity: 0.9; background: rgba(0, 0, 0, 0.514);"></div>
     <div class="fixed top-0 left-0 opacity-0 w-2 h-2"></div>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            display: flex;
-            flex-wrap: wrap;
-            background-color: #84c6ba;
-            padding: 1rem;
-            justify-content: center;
-            margin-top: 150px;
-        }
-
-        .navbar a {
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            text-align: center;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .container {
-            padding: 1rem;
-        }
-        .category, .artist-section {
-            display: none;
-            margin: 2rem 0;
-        }
-        .category.active, .artist-section.active {
-            display: block;
-        }
-        .category .category-list {
-            display: flex;
-            justify-content: space-around;
-        }
-        .category .category-list .category-item {
-            flex: 1;
-            margin: 0 0.5rem;
-            text-align: center;
-        }
-        .category .category-list .category-item img {
-            width: 100%;
-            max-width: 300px;
-            cursor: pointer;
-        }
-        .category .category-list .category-item .category-title {
-            background-color: #545bba;
-            color: white;
-            padding: 0.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-
-        }
-
-        .artist-profile {
-            border: 1px solid #ccc;
-            padding: 1rem;
-            margin: 1rem 0;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .artist-profile img {
-            max-width: 150px;
-            margin-right: 1rem;
-        }
-        .artist-details {
-            flex: 1;
-            min-width: 250px;
-        }
-        .artist-details h3 {
-            margin-top: 0;
-        }
-        .artist-media {
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-        .artist-media img,
-        .artist-media audio {
-            flex: 1 1 45%;
-            margin: 0.5rem;
-            max-width: 100%;
-        }
-        .artist-contact {
-            margin-top: 1rem;
-        }
-        .artist-contact a {
-            margin-right: 0.5rem;
-            text-decoration: none;
-            color: #333;
-        }
-        @media (max-width: 600px) {
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Artistas Duitamenses</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
             .navbar {
-                flex-direction: column;
+                display: flex;
+                flex-wrap: wrap;
+                background-color: #84c6ba;
+                padding: 1rem;
+                justify-content: center;
+                margin-top: 150px;
+            }
+            .navbar a {
+                color: white;
+                padding: 0.5rem 1rem;
+                text-decoration: none;
+                text-align: center;
+            }
+            .navbar a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .category, .artist-section {
+                margin: 2rem 0;
+            }
+            .category .category-list {
+                display: flex;
+                justify-content: space-around;
+            }
+            .category .category-list .category-item {
+                flex: 1;
+                margin: 0 0.5rem;
+                text-align: center;
+            }
+            .category .category-list .category-item img {
+                width: 100%;
+                max-width: 300px;
+                cursor: pointer;
+            }
+            .category .category-list .category-item .category-title {
+                background-color: #545bba;
+                color: white;
+                padding: 0.5rem;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             }
             .artist-profile {
-                flex-direction: column;
+                border: 1px solid #ccc;
+                padding: 1rem;
+                margin: 1rem 0;
+                display: flex;
+                flex-wrap: wrap;
             }
             .artist-profile img {
-                margin-right: 0;
-                margin-bottom: 1rem;
-                max-width: 100%;
+                max-width: 150px;
+                margin-right: 1rem;
+            }
+            .artist-details {
+                flex: 1;
+                min-width: 250px;
+            }
+            .artist-details h3 {
+                margin-top: 0;
+            }
+            .artist-media {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 1rem;
             }
             .artist-media img,
             .artist-media audio {
-                flex: 1 1 100%;
+                flex: 1 1 45%;
+                margin: 0.5rem;
+                max-width: 100%;
             }
-            .category .category-list {
+            .artist-contact {
+                margin-top: 1rem;
+            }
+            .artist-contact a {
+                margin-right: 0.5rem;
+                text-decoration: none;
+                color: #333;
+            }
+            @media (max-width: 600px) {
+                .navbar {
+                    flex-direction: column;
+                }
+                .artist-profile {
+                    flex-direction: column;
+                }
+                .artist-profile img {
+                    margin-right: 0;
+                    margin-bottom: 1rem;
+                    max-width: 100%;
+                }
+                .artist-media img,
+                .artist-media audio {
+                    flex: 1 1 100%;
+                }
+                .category .category-list {
+                    flex-direction: column;
+                }
+            }
+            h4 {
+                display: flex;
+                justify-content: center;
+                font-size: 28px;
+            }
+            #registro {
+                background-color: aquamarine;
+                border-radius: 6px;
+                width: 100%;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .filter {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .filter label {
+                font-size: 1.2em;
+                margin-right: 10px;
+            }
+            .filter select {
+                padding: 5px 10px;
+                font-size: 1em;
+            }
+            .profiles {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .profile {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                padding: 15px;
+                margin: 10px;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
                 flex-direction: column;
+                align-items: center;
+                max-width: 250px;
+                width: 100%;
+                text-align: center;
             }
-        }
-        H4{
-         display: flex;
-         justify-content: center;
-         font-size: 28px;
-        }
-
-        #registro{
-
-            background-color: aquamarine;
-            border-radius: 6px;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-
-        }
-
-    </style>
-</head>
-<body>
-
-
-    <div class="navbar">
-
-        <a href="#" class="nav-category" data-category="categoria1">Artes Plásticas y Visuales</a>
-        <a href="#" class="nav-category" data-category="categoria2">Artes Digitales</a>
-        <a href="#" class="nav-category" data-category="categoria3">Música</a>
-        <a href="#" class="nav-category" data-category="categoria4">Artes Escénicas</a>
-        <a href="#" class="nav-category" data-category="categoria5">Otros</a>
-    </div>
-
-    <div class="container">
-        <H4>¿Sumercé es artista Duitamense? Que está esperando pa registrarse!</H4>
-
-        <button id="registro" onclick="window.location.href='registro.html'">Registro</button>
-
-
-
-        <div id="categorias" class="category active">
-            <div class="category-list">
-                <div class="category-item">
-                    <img src="artesplastic.webp" alt="Artes Plásticas y Visuales" class="category-img" data-category="categoria1">
-                    <div class="category-title">Artes Plásticas y Visuales</div>
-                </div>
-                <div class="category-item">
-                    <img src="digitales.webp" alt="Artes Digitales" class="category-img" data-category="categoria2">
-                    <div class="category-title">Artes Digitales</div>
-                </div>
-                <div class="category-item">
-                    <img src="musi.webp" alt="Música" class="category-img" data-category="categoria3">
-                    <div class="category-title">Música</div>
-                </div>
-                <div class="category-item">
-                    <img src="escenicas.webp" alt="Artes Escénicas" class="category-img" data-category="categoria4">
-                    <div class="category-title">Artes Escénicas</div>
-                </div>
-                <div class="category-item">
-                    <img src="otro.webp" alt="Otros" class="category-img" data-category="categoria5">
-                    <div class="category-title">Otros</div>
-                </div>
-            </div>
-        </div>
-
-
-        <img src="otros.webp" alt="">
-
-        <div id="categoria1" class="artist-section">
-            <h2>Artes Plásticas y Visuales</h2>
-            <button onclick="goBack()">Volver</button>
-            <div class="artist-profile">
-                <img src="ruta_de_imagen.jpg" alt="Nombre del Artista">
-                <div class="artist-details">
-                    <h3>Nombre del Artista</h3>
-                    <p>Categoría: Artes Plásticas y Visuales</p>
-                    <div class="artist-contact">
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
+            .profile img {
+                border-radius: 50%;
+                max-width: 100px;
+                margin-bottom: 10px;
+            }
+            .profile-details {
+                text-align: left;
+                width: 100%;
+            }
+            .profile-photos {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .profile-photos img {
+                border-radius: 5px;
+                max-width: 50px;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar"></div>
+    
+        <div class="container">
+            <h4>¿Sumercé es artista Duitamense? ¿Qué está esperando para registrarse?</h4>
+            <button id="registro" onclick="window.location.href='registro.html'">Registro</button>
+    
+            <div id="categorias" class="category active">
+                <div class="category-list">
+                    <div class="category-item">
+                        <img src="artesplastic.webp" alt="Artes Plásticas y Visuales" class="category-img" data-category="arte">
+                        <div class="category-title">Artes Plásticas y Visuales</div>
                     </div>
-                    <p>Reseña biográfica del artista.</p>
-                </div>
-                <div class="artist-media">
-                    <img src="foto1.jpg" alt="Foto 1">
-                    <img src="foto2.jpg" alt="Foto 2">
-                    <img src="foto3.jpg" alt="Foto 3">
-                    <img src="foto4.jpg" alt="Foto 4">
-                    <img src="foto5.jpg" alt="Foto 5">
-                    <audio controls>
-                        <source src="audio1.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-                    <audio controls>
-                        <source src="audio2.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-                </div>
-            </div>
-            <!-- Repite .artist-profile para más artistas en esta categoría -->
-        </div>
-
-        <div id="categoria2" class="artist-section">
-            <h2>Artes Digitales</h2>
-            <button onclick="goBack()">Volver</button>
-            <div class="artist-profile">
-                <img src="ruta_de_imagen.jpg" alt="Nombre del Artista">
-                <div class="artist-details">
-                    <h3>Nombre del Artista</h3>
-                    <p>Categoría: Artes Digitales</p>
-                    <div class="artist-contact">
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
+                    <div class="category-item">
+                        <img src="digitales.webp" alt="Artes Digitales" class="category-img" data-category="arte_web_media">
+                        <div class="category-title">Artes Digitales</div>
                     </div>
-                    <p>Reseña biográfica del artista.</p>
-                </div>
-                <div class="artist-media">
-                    <img src="foto1.jpg" alt="Foto 1">
-                    <img src="foto2.jpg" alt="Foto 2">
-                    <img src="foto3.jpg" alt="Foto 3">
-                    <img src="foto4.jpg" alt="Foto 4">
-                    <img src="foto5.jpg" alt="Foto 5">
-                    <audio controls>
-                        <source src="audio1.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-                    <audio controls>
-                        <source src="audio2.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-                </div>
-            </div>
-            <!-- Repite .artist-profile para más artistas en esta categoría -->
-        </div>
-
-        <div id="categoria3" class="artist-section">
-            <h2>Música</h2>
-            <button onclick="goBack()">Volver</button>
-            <div class="artist-profile">
-                <img src="ruta_de_imagen.jpg" alt="Nombre del Artista">
-                <div class="artist-details">
-                    <h3>Nombre del Artista</h3>
-                    <p>Categoría: Música</p>
-                    <div class="artist-contact">
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
+                    <div class="category-item">
+                        <img src="musi.webp" alt="Música" class="category-img" data-category="música">
+                        <div class="category-title">Música</div>
                     </div>
-                    <p>Reseña biográfica del artista.</p>
-                </div>
-                <div class="artist-media">
-                    <img src="foto1.jpg" alt="Foto 1">
-                    <img src="foto2.jpg" alt="Foto 2">
-                    <img src="foto3.jpg" alt="Foto 3">
-                    <img src="foto4.jpg" alt="Foto 4">
-                    <img src="foto5.jpg" alt="Foto 5">
-                    <audio controls>
-                        <source src="audio1.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-                    <audio controls>
-                        <source src="audio2.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-                </div>
-            </div>
-            <!-- Repite .artist-profile para más artistas en esta categoría -->
-        </div>
-
-        <div id="categoria4" class="artist-section">
-            <h2>Artes Escénicas</h2>
-            <button onclick="goBack()">Volver</button>
-            <div class="artist-profile">
-                <img src="ruta_de_imagen.jpg" alt="Nombre del Artista">
-                <div class="artist-details">
-                    <h3>Nombre del Artista</h3>
-                    <p>Categoría: Artes Escénicas</p>
-                    <div class="artist-contact">
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
+                    <div class="category-item">
+                        <img src="escenicas.webp" alt="Artes Escénicas" class="category-img" data-category="teatro">
+                        <div class="category-title">Artes Escénicas</div>
                     </div>
-                    <p>Reseña biográfica del artista.</p>
-                </div>
-                <div class="artist-media">
-                    <img src="foto1.jpg" alt="Foto 1">
-                    <img src="foto2.jpg" alt="Foto 2">
-                    <img src="foto3.jpg" alt="Foto 3">
-                    <img src="foto4.jpg" alt="Foto 4">
-                    <img src="foto5.jpg" alt="Foto 5">
-                    <audio controls>
-                        <source src="audio1.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-                    <audio controls>
-                        <source src="audio2.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-                </div>
-            </div>
-            <!-- Repite .artist-profile para más artistas en esta categoría -->
-        </div>
-
-        <div id="categoria5" class="artist-section">
-            <h2>Otros</h2>
-            <button onclick="goBack()">Volver</button>
-            <div class="artist-profile">
-                <img src="ruta_de_imagen.jpg" alt="Nombre del Artista">
-                <div class="artist-details">
-                    <h3>Nombre del Artista</h3>
-                    <p>Categoría: Otros</p>
-                    <div class="artist-contact">
-                        <a href="#">Facebook</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
+                    <div class="category-item">
+                        <img src="arteurbano.webp" alt="Otros" class="category-img" data-category="danza">
+                        <div class="category-title">Arte Urbano</div>
                     </div>
-                    <p>Reseña biográfica del artista.</p>
-                </div>
-                <div class="artist-media">
-                    <img src="foto1.jpg" alt="Foto 1">
-                    <img src="foto2.jpg" alt="Foto 2">
-                    <img src="foto3.jpg" alt="Foto 3">
-                    <img src="foto4.jpg" alt="Foto 4">
-                    <img src="foto5.jpg" alt="Foto 5">
-                    <audio controls>
-                        <source src="audio1.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
-                    <audio controls>
-                        <source src="audio2.mp3" type="audio/mpeg">
-                        Tu navegador no soporta la reproducción de audio.
-                    </audio>
+                    <div class="category-item">
+                        <img src="cine.webp" alt="Cine" class="category-img" data-category="cine">
+                        <div class="category-title">Cine</div>
+                    </div>
+                    <div class="category-item">
+                        <img src="Literatura.webp" alt="Literatura" class="category-img" data-category="literatura">
+                        <div class="category-title">Literatura</div>
+                    </div>
+                    <div class="category-item">
+                        <img src="fotografia.webp" alt="Literatura" class="category-img" data-category="literatura">
+                        <div class="category-title">Fotografía</div>
+                    </div>
+                    <div class="category-item">
+                        <img src="otro.webp" alt="Otros" class="category-img" data-category="otro">
+                        <div class="category-title">Otros</div>
+                    </div>
                 </div>
             </div>
-            <!-- Repite .artist-profile para más artistas en esta categoría -->
+    
+            <div class="container">
+                <div class="filter">
+                    <label for="campoAccion">Filtrar por Campo de Acción:</label>
+                    <select id="campoAccion">
+                        <option value="all">Todos</option>
+                        <option value="arte">Artes plásticas o visuales</option>
+                        <option value="música">Música</option>
+                        <option value="teatro">Teatro</option>
+                        <option value="danza">Danza</option>
+                        <option value="literatura">Literatura</option>
+                        <option value="cine">Cine</option>
+                        <option value="fotografía">Fotografía</option>
+                        <option value="arte_callejero">Arte Urbano</option>
+                        <option value="arte_web_media">Artes Web Media</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div id="profiles" class="profiles"></div>
+            </div>
         </div>
-
-    </div>
-
-    <script>
-        document.querySelectorAll('.nav-category, .category-img').forEach(item => {
-            item.addEventListener('click', event => {
-                event.preventDefault();
-                const category = event.target.getAttribute('data-category');
-                document.querySelectorAll('.category, .artist-section').forEach(section => {
-                    section.classList.remove('active');
+    
+        <!-- Carga de Firebase JS SDK -->
+        <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-storage-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore-compat.js"></script>
+        <script>
+            // Configuración de Firebase
+            const firebaseConfig = {
+                apiKey: "AIzaSyBPTxSNtORJdZU40efCQvNv2wKKyrYY6EI",
+                authDomain: "catalogo-64838.firebaseapp.com",
+                projectId: "catalogo-64838",
+                storageBucket: "catalogo-64838.appspot.com",
+                messagingSenderId: "1032209654548",
+                appId: "1:1032209654548:web:2068ddc97a7ce322aed801",
+                measurementId: "G-QLDGV67XS3"
+            };
+    
+            // Inicializar Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+    
+            function fetchProfiles(campoAccion = 'all') {
+                let query = db.collection('profiles').where('visible', '==', true);
+    
+                if (campoAccion !== 'all') {
+                    query = query.where('campoAccion', '==', campoAccion);
+                }
+    
+                query.get().then((querySnapshot) => {
+                    const profilesContainer = document.getElementById('profiles');
+                    profilesContainer.innerHTML = '';
+    
+                    querySnapshot.forEach((doc) => {
+                        const profile = doc.data();
+                        const profileElement = document.createElement('div');
+                        profileElement.className = 'profile';
+                        profileElement.innerHTML = `
+                            <img src="${profile.profilePhoto}" alt="Foto de perfil" onerror="this.onerror=null; this.src='default-profile.png'">
+                            <div class="profile-details">
+                                <h3>${profile.nombreArtista}</h3>
+                                <p><strong>Nombre:</strong> ${profile.nombre}</p>
+                                <p><strong>Edad:</strong> ${profile.edad}</p>
+                                <p><strong>Campo de Acción:</strong> ${profile.campoAccion}</p>
+                                <p><strong>Oficio:</strong> ${profile.oficio}</p>
+                                <p><strong>Email:</strong> ${profile.email}</p>
+                                <p><strong>Facebook:</strong> ${profile.facebook}</p>
+                                <p><strong>YouTube:</strong> ${profile.youtube}</p>
+                                <p><strong>Instagram:</strong> ${profile.instagram}</p>
+                                <p><strong>Página Web:</strong> ${profile.paginaWeb}</p>
+                                <p><strong>Otro:</strong> ${profile.otro}</p>
+                                <div class="profile-photos">
+                                    <strong>Fotos del Perfil:</strong>
+                                    ${profile.profilePhotos ? profile.profilePhotos.map(photoUrl => `<img src="${photoUrl}" alt="Foto adicional" onerror="this.onerror=null; this.src='default-photo.png'">`).join('') : ''}
+                                </div>
+                            </div>
+                        `;
+                        profilesContainer.appendChild(profileElement);
+                    });
+                }).catch((error) => {
+                    console.error("Error obteniendo los perfiles: ", error);
                 });
-                document.getElementById(category).classList.add('active');
+            }
+    
+            document.getElementById('campoAccion').addEventListener('change', (event) => {
+                fetchProfiles(event.target.value);
             });
-        });
-
-        function goBack() {
-            document.querySelectorAll('.artist-section').forEach(section => {
-                section.classList.remove('active');
+    
+            document.querySelectorAll('.category-img').forEach((img) => {
+                img.addEventListener('click', () => {
+                    const category = img.getAttribute('data-category');
+                    fetchProfiles(category);
+                });
             });
-            document.getElementById('categorias').classList.add('active');
-        }
-    </script>
+    
+            fetchProfiles();
+        </script>
+    </body>
+    </html>
+    
 
 
 <footer class="hidden md:block py-10 sm:py-10 w-full bg-color_text relative" style="background-color: rgba(0, 0, 0, 0)">
