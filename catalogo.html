@@ -90,7 +90,7 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
 
                  <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-current-menu-item mega-page_item mega-page-item-104 mega-current_page_item mega-align-bottom-left mega-menu-flyout mega-menu-item-227" id="mega-menu-item-227"><a class="mega-menu-link" href="index.html" aria-current="page" tabindex="0">Inicio</a></li>
 
-                 <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-current-menu-item mega-page_item mega-page-item-104 mega-current_page_item mega-align-bottom-left mega-menu-flyout mega-menu-item-228" id="mega-menu-item-227"><a class="mega-menu-link" href="transparencia.html" aria-current="page" tabindex="0">transparencia</a></li>
+                 <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-current-menu-item mega-page_item mega-page-item-104 mega-current_page_item mega-align-bottom-left mega-menu-flyout mega-menu-item-228" id="mega-menu-item-227"><a class="mega-menu-link" href="tranparencia.html" aria-current="page" tabindex="0">transparencia</a></li>
                  <li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-current-menu-item mega-page_item mega-page-item-104 mega-current_page_item mega-align-bottom-left mega-menu-flyout mega-menu-item-228" id="mega-menu-item-227"><a class="mega-menu-link" href="cmdc.html" aria-current="page" tabindex="0">CMDC</a></li>
 
                  <li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-242" id="mega-menu-item-242"><a class="mega-menu-link" href="#" aria-haspopup="true" aria-expanded="false" tabindex="0">Nosotros<span class="mega-indicator" data-has-click-event="true"></span></a>
@@ -145,329 +145,380 @@ var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":
     <div class="cursor hidden w-6 h-6 rounded-full bg-secondary bg-opacity-90 fixed top-0 left-0 lg:flex items-center justify-center" style="translate: none; rotate: none; scale: none; transform: translate(-50%, -50%) translate(483px, 350px); opacity: 0.9; background: rgba(0, 0, 0, 0.514);"></div>
     <div class="fixed top-0 left-0 opacity-0 w-2 h-2"></div>
 
-    <!DOCTYPE html>
-    <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Artistas Duitamenses</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-            .navbar {
-                display: flex;
-                flex-wrap: wrap;
-                background-color: #84c6ba;
-                padding: 1rem;
-                justify-content: center;
-                margin-top: 150px;
-            }
-            .navbar a {
-                color: white;
-                padding: 0.5rem 1rem;
-                text-decoration: none;
-                text-align: center;
-            }
-            .navbar a:hover {
-                background-color: #ddd;
-                color: black;
-            }
-            .container {
-                padding: 1rem;
-            }
-            .category, .artist-section {
-                margin: 2rem 0;
-            }
-            .category .category-list {
-                display: flex;
-                justify-content: space-around;
-            }
-            .category .category-list .category-item {
-                flex: 1;
-                margin: 0 0.5rem;
-                text-align: center;
-            }
-            .category .category-list .category-item img {
-                width: 100%;
-                max-width: 300px;
-                cursor: pointer;
-            }
-            .category .category-list .category-item .category-title {
-                background-color: #545bba;
-                color: white;
-                padding: 0.5rem;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            }
-            .artist-profile {
-                border: 1px solid #ccc;
-                padding: 1rem;
-                margin: 1rem 0;
-                display: flex;
-                flex-wrap: wrap;
-            }
-            .artist-profile img {
-                max-width: 150px;
-                margin-right: 1rem;
-            }
-            .artist-details {
-                flex: 1;
-                min-width: 250px;
-            }
-            .artist-details h3 {
-                margin-top: 0;
-            }
-            .artist-media {
-                display: flex;
-                flex-wrap: wrap;
-                margin-top: 1rem;
-            }
-            .artist-media img,
-            .artist-media audio {
-                flex: 1 1 45%;
-                margin: 0.5rem;
-                max-width: 100%;
-            }
-            .artist-contact {
-                margin-top: 1rem;
-            }
-            .artist-contact a {
-                margin-right: 0.5rem;
-                text-decoration: none;
-                color: #333;
-            }
-            @media (max-width: 600px) {
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Museo Emocional - Convocatoria Artística</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                }
                 .navbar {
-                    flex-direction: column;
+                    display: flex;
+                    flex-wrap: wrap;
+                    background-color: #84c6ba;
+                    padding: 1rem;
+                    justify-content: center;
+                    margin-top: 150px;
+                }
+                .navbar a {
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    text-decoration: none;
+                    text-align: center;
+                }
+                .navbar a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+                .container {
+                    padding: 1rem;
+                }
+                .category, .artist-section {
+                    margin: 2rem 0;
+                }
+                .category .category-list {
+                    display: flex;
+                    justify-content: space-around;
+                }
+                .category .category-list .category-item {
+                    flex: 1;
+                    margin: 0 0.5rem;
+                    text-align: center;
+                }
+                .category .category-list .category-item img {
+                    width: 100%;
+                    max-width: 300px;
+                    cursor: pointer;
+                }
+                .category .category-list .category-item .category-title {
+                    background-color: #545bba;
+                    color: white;
+                    padding: 0.5rem;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 }
                 .artist-profile {
+                    border: 1px solid #ccc;
+                    padding: 1rem;
+                    margin: 1rem 0;
+                    display: flex;
+                    flex-wrap: wrap;
                     flex-direction: column;
+                    align-items: center;
                 }
                 .artist-profile img {
-                    margin-right: 0;
+                    max-width: 150px;
                     margin-bottom: 1rem;
-                    max-width: 100%;
+                }
+                .artist-details {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+                    opacity: 0;
+                    width: 100%;
+                }
+                .artist-details.show {
+                    max-height: 1000px; /* Ajusta esto según el contenido */
+                    opacity: 1;
+                }
+                .artist-details h3 {
+                    margin-top: 0;
+                }
+                .artist-media {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-top: 1rem;
                 }
                 .artist-media img,
                 .artist-media audio {
-                    flex: 1 1 100%;
+                    flex: 1 1 45%;
+                    margin: 0.5rem;
+                    max-width: 100%;
                 }
-                .category .category-list {
+                .artist-contact {
+                    margin-top: 1rem;
+                }
+                .artist-contact a {
+                    margin-right: 0.5rem;
+                    text-decoration: none;
+                    color: #333;
+                }
+                @media (max-width: 600px) {
+                    .navbar {
+                        flex-direction: column;
+                    }
+                    .artist-profile {
+                        flex-direction: column;
+                    }
+                    .artist-profile img {
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                        max-width: 100%;
+                    }
+                    .artist-media img,
+                    .artist-media audio {
+                        flex: 1 1 100%;
+                    }
+                    .category .category-list {
+                        flex-direction: column;
+                    }
+                }
+                h4 {
+                    display: flex;
+                    justify-content: center;
+                    font-size: 28px;
+                    color: cadetblue;
+                }
+                #registro {
+                    background-color: aquamarine;
+                    border-radius: 6px;
+                    width: 100%;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                }
+                .filter {
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+                .filter label {
+                    font-size: 1.2em;
+                    margin-right: 10px;
+                }
+                .filter select {
+                    padding: 5px 10px;
+                    font-size: 1em;
+                }
+                .profiles {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .profile {
+                    background-color: #cbcbcb;
+                    background: url('fndo.webp') no-repeat center center fixed;
+                    background-size: cover;
+                    border: 1px solid #ddd;
+                    padding: 15px;
+                    margin: 10px;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    display: flex;
                     flex-direction: column;
+                    align-items: center;
+                    max-width: 400px;
+                    width: 100%;
+                    text-align: center;
                 }
-            }
-            h4 {
-                display: flex;
-                justify-content: center;
-                font-size: 28px;
-            }
-            #registro {
-                background-color: aquamarine;
-                border-radius: 6px;
-                width: 100%;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-            .filter {
-                margin-bottom: 20px;
-                text-align: center;
-            }
-            .filter label {
-                font-size: 1.2em;
-                margin-right: 10px;
-            }
-            .filter select {
-                padding: 5px 10px;
-                font-size: 1em;
-            }
-            .profiles {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .profile {
-                background-color: #fff;
-                border: 1px solid #ddd;
-                padding: 15px;
-                margin: 10px;
-                border-radius: 10px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                max-width: 250px;
-                width: 100%;
-                text-align: center;
-            }
-            .profile img {
-                border-radius: 50%;
-                max-width: 100px;
-                margin-bottom: 10px;
-            }
-            .profile-details {
-                text-align: left;
-                width: 100%;
-            }
-            .profile-photos {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin-top: 10px;
-            }
-            .profile-photos img {
-                border-radius: 5px;
-                max-width: 50px;
-                margin: 5px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="navbar"></div>
-    
-        <div class="container">
-            <h4>¿Sumercé es artista Duitamense? ¿Qué está esperando para registrarse?</h4>
-            <button id="registro" onclick="window.location.href='registro.html'">Registro</button>
-    
-            <div id="categorias" class="category active">
-                <div class="category-list">
-                    <div class="category-item">
-                        <img src="artesplastic.webp" alt="Artes Plásticas y Visuales" class="category-img" data-category="arte">
-                        <div class="category-title">Artes Plásticas y Visuales</div>
-                    </div>
-                    <div class="category-item">
-                        <img src="digitales.webp" alt="Artes Digitales" class="category-img" data-category="arte_web_media">
-                        <div class="category-title">Artes Digitales</div>
-                    </div>
-                    <div class="category-item">
-                        <img src="musi.webp" alt="Música" class="category-img" data-category="música">
-                        <div class="category-title">Música</div>
-                    </div>
-                    <div class="category-item">
-                        <img src="escenicas.webp" alt="Artes Escénicas" class="category-img" data-category="teatro">
-                        <div class="category-title">Artes Escénicas</div>
-                    </div>
-                    <div class="category-item">
-                        <img src="arteurbano.webp" alt="Otros" class="category-img" data-category="danza">
-                        <div class="category-title">Arte Urbano</div>
-                    </div>
-                    <div class="category-item">
-                        <img src="cine.webp" alt="Cine" class="category-img" data-category="cine">
-                        <div class="category-title">Cine</div>
-                    </div>
-                    <div class="category-item">
-                        <img src="Literatura.webp" alt="Literatura" class="category-img" data-category="literatura">
-                        <div class="category-title">Literatura</div>
-                    </div>
-                    <div class="category-item">
-                        <img src="fotografia.webp" alt="Literatura" class="category-img" data-category="literatura">
-                        <div class="category-title">Fotografía</div>
-                    </div>
-                    <div class="category-item">
-                        <img src="otro.webp" alt="Otros" class="category-img" data-category="otro">
-                        <div class="category-title">Otros</div>
-                    </div>
-                </div>
-            </div>
-    
+                .profile img {
+                    border-radius: 50%;
+                    max-width: 200px;
+                    margin-bottom: 10px;
+                }
+                .profile-details {
+                    text-align: left;
+                    width: 100%;
+                }
+                .profile-photos {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    margin-top: 10px;
+                }
+                .profile-photos img {
+                    border-radius: 5px;
+                    max-width: 300px;
+                    margin: 5px;
+                    transition: transform 0.1s;
+                }
+                .profile-photos img:hover {
+                    transform: scale(2.3);
+                }
+                .profile button {
+                    margin-top: 10px;
+                    padding: 10px;
+                    background-color: #7af6d3;
+                    color: #ffffff;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                .profile button:hover {
+                    background-color: #74e8bf;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="navbar"></div>
+        
             <div class="container">
-                <div class="filter">
-                    <label for="campoAccion">Filtrar por Campo de Acción:</label>
-                    <select id="campoAccion">
-                        <option value="all">Todos</option>
-                        <option value="arte">Artes plásticas o visuales</option>
-                        <option value="música">Música</option>
-                        <option value="teatro">Teatro</option>
-                        <option value="danza">Danza</option>
-                        <option value="literatura">Literatura</option>
-                        <option value="cine">Cine</option>
-                        <option value="fotografía">Fotografía</option>
-                        <option value="arte_callejero">Arte Urbano</option>
-                        <option value="arte_web_media">Artes Web Media</option>
-                        <option value="otro">Otro</option>
-                    </select>
+                <h4>¿Sumercé es artista Duitamense? ¿Qué está esperando pa registrarse?</h4>
+                <button id="registro" onclick="window.location.href='registro.html'">Registro</button>
+        
+                <div id="categorias" class="category active">
+                    <div class="category-list">
+                        <div class="category-item">
+                            <img src="artesplastic.webp" alt="Artes Plásticas y Visuales" class="category-img" data-category="arte">
+                            <div class="category-title">Artes Plásticas y Visuales</div>
+                        </div>
+                        <div class="category-item">
+                            <img src="digitales.webp" alt="Artes Digitales" class="category-img" data-category="arte_web_media">
+                            <div class="category-title">Artes Digitales</div>
+                        </div>
+                        <div class="category-item">
+                            <img src="musi.webp" alt="Música" class="category-img" data-category="música">
+                            <div class="category-title">Música</div>
+                        </div>
+                        <div class="category-item">
+                            <img src="escenicas.webp" alt="Artes Escénicas" class="category-img" data-category="teatro">
+                            <div class="category-title">Artes Escénicas</div>
+                        </div>
+                        <div class="category-item">
+                            <img src="arteurbano.webp" alt="Otros" class="category-img" data-category="danza">
+                            <div class="category-title">Arte Urbano</div>
+                        </div>
+                        <div class="category-item">
+                            <img src="cine.webp" alt="Cine" class="category-img" data-category="cine">
+                            <div class="category-title">Cine</div>
+                        </div>
+                        <div class="category-item">
+                            <img src="Literatura.webp" alt="Literatura" class="category-img" data-category="literatura">
+                            <div class="category-title">Literatura</div>
+                        </div>
+                        <div class="category-item">
+                            <img src="fotografia.webp" alt="Literatura" class="category-img" data-category="literatura">
+                            <div class="category-title">Fotografía</div>
+                        </div>
+                        <div class="category-item">
+                            <img src="otro.webp" alt="Otros" class="category-img" data-category="otro">
+                            <div class="category-title">Otros</div>
+                        </div>
+                    </div>
                 </div>
-                <div id="profiles" class="profiles"></div>
+        
+                <div class="container">
+                    <div class="filter">
+                        <label for="campoAccion">Filtrar por Campo de Acción:</label>
+                        <select id="campoAccion">
+                            <option value="all">Todos</option>
+                            <option value="arte">Artes plásticas o visuales</option>
+                            <option value="música">Música</option>
+                            <option value="teatro">Teatro</option>
+                            <option value="danza">Danza</option>
+                            <option value="literatura">Literatura</option>
+                            <option value="cine">Cine</option>
+                            <option value="fotografía">Fotografía</option>
+                            <option value="arte_callejero">Arte Urbano</option>
+                            <option value="arte_web_media">Artes Web Media</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div id="profiles" class="profiles"></div>
+                </div>
             </div>
-        </div>
-    
-        <!-- Carga de Firebase JS SDK -->
-        <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-storage-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore-compat.js"></script>
-        <script>
-            // Configuración de Firebase
-            const firebaseConfig = {
-                apiKey: "AIzaSyBPTxSNtORJdZU40efCQvNv2wKKyrYY6EI",
-                authDomain: "catalogo-64838.firebaseapp.com",
-                projectId: "catalogo-64838",
-                storageBucket: "catalogo-64838.appspot.com",
-                messagingSenderId: "1032209654548",
-                appId: "1:1032209654548:web:2068ddc97a7ce322aed801",
-                measurementId: "G-QLDGV67XS3"
-            };
-    
-            // Inicializar Firebase
-            firebase.initializeApp(firebaseConfig);
-            const db = firebase.firestore();
-    
-            function fetchProfiles(campoAccion = 'all') {
-                let query = db.collection('profiles').where('visible', '==', true);
-    
-                if (campoAccion !== 'all') {
-                    query = query.where('campoAccion', '==', campoAccion);
-                }
-    
-                query.get().then((querySnapshot) => {
-                    const profilesContainer = document.getElementById('profiles');
-                    profilesContainer.innerHTML = '';
-    
-                    querySnapshot.forEach((doc) => {
-                        const profile = doc.data();
-                        const profileElement = document.createElement('div');
-                        profileElement.className = 'profile';
-                        profileElement.innerHTML = `
-                            <img src="${profile.profilePhoto}" alt="Foto de perfil" onerror="this.onerror=null; this.src='default-profile.png'">
-                            <div class="profile-details">
-                                <h3>${profile.nombreArtista}</h3>
-                                <p><strong>Nombre:</strong> ${profile.nombre}</p>
-                                <p><strong>Edad:</strong> ${profile.edad}</p>
-                                <p><strong>Campo de Acción:</strong> ${profile.campoAccion}</p>
-                                <p><strong>Oficio:</strong> ${profile.oficio}</p>
-                                <p><strong>Email:</strong> ${profile.email}</p>
-                                <p><strong>Facebook:</strong> ${profile.facebook}</p>
-                                <p><strong>YouTube:</strong> ${profile.youtube}</p>
-                                <p><strong>Instagram:</strong> ${profile.instagram}</p>
-                                <p><strong>Página Web:</strong> ${profile.paginaWeb}</p>
-                                <p><strong>Otro:</strong> ${profile.otro}</p>
-                                <div class="profile-photos">
-                                    <strong>Fotos del Perfil:</strong>
-                                    ${profile.profilePhotos ? profile.profilePhotos.map(photoUrl => `<img src="${photoUrl}" alt="Foto adicional" onerror="this.onerror=null; this.src='default-photo.png'">`).join('') : ''}
+        
+            <!-- Carga de Firebase JS SDK -->
+            <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-app-compat.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-auth-compat.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-storage-compat.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore-compat.js"></script>
+            <script>
+                // Configuración de Firebase
+                const firebaseConfig = {
+                    apiKey: "AIzaSyBPTxSNtORJdZU40efCQvNv2wKKyrYY6EI",
+                    authDomain: "catalogo-64838.firebaseapp.com",
+                    projectId: "catalogo-64838",
+                    storageBucket: "catalogo-64838.appspot.com",
+                    messagingSenderId: "1032209654548",
+                    appId: "1:1032209654548:web:2068ddc97a7ce322aed801",
+                    measurementId: "G-QLDGV67XS3"
+                };
+        
+                // Inicializar Firebase
+                firebase.initializeApp(firebaseConfig);
+                const db = firebase.firestore();
+        
+                function fetchProfiles(campoAccion = 'all') {
+                    let query = db.collection('profiles').where('visible', '==', true);
+        
+                    if (campoAccion !== 'all') {
+                        query = query.where('campoAccion', '==', campoAccion);
+                    }
+        
+                    query.get().then((querySnapshot) => {
+                        const profilesContainer = document.getElementById('profiles');
+                        profilesContainer.innerHTML = '';
+        
+                        querySnapshot.forEach((doc) => {
+                            const profile = doc.data();
+                            const profileElement = document.createElement('div');
+                            profileElement.className = 'profile';
+                            profileElement.innerHTML = `
+                                <img src="${profile.profilePhoto}" alt="Foto de perfil" onerror="this.onerror=null; this.src='default-profile.png'">
+                                <div class="profile-details">
+                                    <h3>${profile.nombreArtista}</h3>
+                                    <p><strong>Nombre:</strong> ${profile.nombre}</p>
+                                    <p><strong>Campo de Acción:</strong> ${profile.campoAccion}</p>
+                                    <button class="toggle-details">Ver detalles</button>
+                                    <div class="artist-details">
+                                        <p><strong>Edad:</strong> ${profile.edad}</p>
+                                        <p><strong>Oficio:</strong> ${profile.oficio}</p>
+                                        <p><strong>Email:</strong> ${profile.email}</p>
+                                        <p><strong>Facebook:</strong> ${profile.facebook}</p>
+                                        <p><strong>YouTube:</strong> ${profile.youtube}</p>
+                                        <p><strong>Instagram:</strong> ${profile.instagram}</p>
+                                        <p><strong>Página Web:</strong> ${profile.paginaWeb}</p>
+                                        <p><strong>Otro:</strong> ${profile.otro}</p>
+                                        <div class="profile-photos">
+                                            <strong>Fotos del Perfil:</strong>
+                                            ${profile.profilePhotos ? profile.profilePhotos.map(photoUrl => `<img src="${photoUrl}" alt="Foto adicional" onerror="this.onerror=null; this.src='default-photo.png'">`).join('') : ''}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        `;
-                        profilesContainer.appendChild(profileElement);
+                            `;
+                            profilesContainer.appendChild(profileElement);
+                        });
+        
+                        document.querySelectorAll('.toggle-details').forEach((button) => {
+                            button.addEventListener('click', (event) => {
+                                const details = event.target.nextElementSibling;
+                                if (details.classList.contains('show')) {
+                                    details.classList.remove('show');
+                                    button.textContent = 'Ver detalles';
+                                } else {
+                                    details.classList.add('show');
+                                    button.textContent = 'Ocultar detalles';
+                                }
+                            });
+                        });
+                    }).catch((error) => {
+                        console.error("Error obteniendo los perfiles: ", error);
                     });
-                }).catch((error) => {
-                    console.error("Error obteniendo los perfiles: ", error);
+                }
+        
+                document.getElementById('campoAccion').addEventListener('change', (event) => {
+                    fetchProfiles(event.target.value);
                 });
-            }
-    
-            document.getElementById('campoAccion').addEventListener('change', (event) => {
-                fetchProfiles(event.target.value);
-            });
-    
-            document.querySelectorAll('.category-img').forEach((img) => {
-                img.addEventListener('click', () => {
-                    const category = img.getAttribute('data-category');
-                    fetchProfiles(category);
+        
+                document.querySelectorAll('.category-img').forEach((img) => {
+                    img.addEventListener('click', () => {
+                        const category = img.getAttribute('data-category');
+                        fetchProfiles(category);
+                    });
                 });
-            });
-    
-            fetchProfiles();
-        </script>
-    </body>
+        
+                fetchProfiles();
+            </script>
+        </body>
+        </html>
+        
     </html>
     
 
